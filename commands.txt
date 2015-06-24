@@ -1,0 +1,120 @@
+// autoexec.cfg by Twixes //
+// -novid -nojoy -threads 4 -language english //
+
+//S1 GAME //
+gameinstructor_enable "0" //disables beginner tutorials
+cl_disablehtmlmotd "1" //does not download message of the day
+cl_autowepswitch "0" //does not switch to a just picked up weapon [default: 1]
+closeonbuy "0" //buy menu does not close after buying something
+
+//S2 NETWORK //
+rate "128000" //makes client-server communication better
+cl_cmdrate "128" //makes client-server communication better [default: 64]
+cl_updaterate "128" //makes client-server communication better [default: 64]
+cl_timeout "500" //disconnects you from the server after 500 seconds of no connection [default: 30]
+cl_downloadfilter "nosounds" //does not download additional sounds from community servers
+mm_dedicated_search_maxping "50" //limits matchmaking search to servers with maximum 50ms of ping [default: 150]
+
+//S3 AUDIO //
+windows_speaker_config "1" //sets headset sound mode
+snd_mute_losefocus "0" //makes the game still make sounds after Alt-Tabbing (useful when matchmaking) [default: 1]
+snd_mixahead "0.075" //makes sound delay slightly shorter [default: 0.1]
+voice_scale "1" //sets voice chat volume to maximum [default: 1]
+
+//S4 VIDEO //
+
+	//E1 INTERFACE //
+	player_nevershow_communityservermessage "1" //does not show the message when opening community server menu [default: 0]
+	net_graph "1" //activates net graph [default: 0]
+	net_graphheight "0" //places net graph as low as possible
+	net_graphproportionalfont "1" //net graph uses proportional (to screen resolution) font [default: 0]
+	hud_showtargetid "1" //when pointing over a player, his name will be shown [defualt: 1]
+	cl_showloadout "1" //loadout (the box with weapons, on right) will not autohide [default: 0]
+	cl_loadout_colorweaponnames "0" //weapon names are not colored [default: 1]
+	cl_show_clan_in_death_notice "0" //hides clan tag in the kill feed [default: 1]
+	cl_teammate_colors_show "1" //competitive teammates are assigned with colors [defualt: 1]
+	cl_radar_icon_scale_min "0.7" //changes size of icons on the radar
+	cl_radar_scale "0.4" //radar show more of the map
+	cl_radar_rotate "1" //radar rotates with the player [default: 1]
+	cl_radar_always_centered "0" //radar will not be centered around the player [default: 1]
+	cl_radar_square_with_scoreboard "1" //radar will turn into its squared form when activating the scoreboard [default: 1]
+	cl_hud_bomb_under_radar "0" //bomb indicator will be shown in your loadout, not under the radar [default: 1]
+	cl_hud_color "2" //changes interface color to very light blue [default: 0]
+
+	//E2 CROSSHAIR //
+	cl_crosshairusealpha "1" //allow crosshair alpha change [default: 0]
+	cl_crosshairalpha "255" //turns off crosshair transparency
+
+	//E3 VIEWMODEL //
+	cl_disablefreezecam "1" //disables freezecam in non-competitive modes [default: 0]
+	cl_spec_mode "4" //spectator camera is defaulted to first person
+	cl_bob_lower_amt "0" //minimalises bobbing
+	cl_bobamt_lat "0" //minimalises bobbing
+	cl_bobamt_vert "0" //minimalises bobbing
+	cl_viewmodel_shift_left_amt "0" //minimalises bobbing
+	cl_viewmodel_shift_right_amt "0" //minimalises bobbing
+
+	//E4 ELSE //
+	cl_forcepreload "1" //enables force map preloading (more RAM, less CPU usage, may increase performance) [default: 0]
+	engine_no_focus_sleep "0" //game engine does not go to sleep after Alt-Tabbing [default: 1]
+
+//S5 STEERING //
+
+	//E1 MOUSE //
+	m_rawinput "1" //downloads data directly from the mouse, avoiding Windows [default: 0]
+	m_customaccel "0" //disables mouse acceleration
+	m_customaccel_scale "0" //disables mouse acceleration
+	m_mousespeed "0" //disables mouse acceleration
+	m_mouseaccel1 "0" //disables mouse acceleration
+	m_mouseaccel2 "0" //disables mouse acceleration
+
+	//E2 KEYBOARD //
+	cl_use_opens_buy_menu "0" //use key does not open buy menu [default: 1]
+	bind "v" "+quickswitch" //binds quick switch (press to instantly take knife out and come back to your last weapon)
+	bind "h" "voice_switch" //binds voice chat switch (press once to disable, press again to enable)
+	bind "j" "gameinstructor_switch" //binds ninja mode (press once to enable bomb finder, press again to disable)
+	bind "home" "disconnect" //bind going back to main menu
+	bind "end" "quit" //binds closing the program
+	bind "0" "cl_radar_scale 0.4" //binds radar scale change
+	bind "-" "cl_radar_scale 0.6" //binds radar scale change
+	bind "=" "cl_radar_scale 0.8" //binds radar scale change
+	bind "kp_slash" "buy flashbang"
+	bind "kp_multiply" "buy smokegrenade"
+	bind "kp_minus" "buy incgrenade"
+	bind "kp_home" "buy p250"
+	bind "kp_uparrow" "buy fn57"
+	bind "kp_pgup" "buy deagle"
+	bind "kp_leftarrow" "buy m4a1"
+	bind "kp_5" "buy famas"
+	bind "kp_rightarrow" "buy awp"
+	bind "kp_end" "buy p90"
+	bind "kp_downarrow" "buy mp7"
+	bind "kp_pgdn" "buy mp9"
+	bind "kp_plus" "buy defuser"
+	bind "kp_ins" "buy vest"
+	bind "kp_del" "buy vesthelm; buy vest"
+
+//S6 CONSOLE //
+
+	//E1 ALIASES //
+	alias "+quickswitch" "slot3"
+	alias "-quickswitch" "lastinv"
+	alias "voice_switch" "voice_off"
+	alias "voice_off" "voice_scale 0; bind h voice_on; echo EXECUTED: Voice chat DISABLED."
+	alias "voice_on" "voice_scale 1; bind h voice_off; echo EXECUTED: Voice chat ENABLED."
+	alias "gameinstructor_switch" "gameinstructor_on"
+	alias "gameinstructor_off" "gameinstructor_enable 0; bind j gameinstructor_on; echo EXECUTED: Ninja mode DISABLED."
+	alias "gameinstructor_on" "gameinstructor_enable 1; bind j gameinstructor_off; echo EXECUTED: Ninja mode ENABLED."
+	alias "weapon_warmupspam" "exec weapon_warmupspam"
+	alias "autoexec" "exec autoexec"
+
+	//E2 DAMAGE PANEL //
+	developer "1" //enables console log in the top left corner [default: 0]
+	con_filter_enable "2" //enables console text filtering [default: 1]
+	con_filter_text "Damage" //marks lines containing word "Damage"
+	con_filter_text_out "Player:" //removes lines containing word "Player"
+
+	//E3 ELSE //
+	host_writeconfig
+	clear
+	echo "EXECUTED: User configuration file APPLIED."
